@@ -1,0 +1,42 @@
+\documentclass[a4paper,12pt,russian]{report}
+\input{./using.tex}
+
+\titleformat{\section}
+  {\normalfont\Large\bfseries\centering}{\thesection}{1em}{}
+\titleformat{\subsection}
+  {\normalfont\large\bfseries\centering}{\thesubsection}{1em}{}
+
+\newcommand{\insertYear}{$year$}
+\newcommand{\insertInstitute}{
+  $institute.name$\linebreak
+  \textbf{$institute.department$}
+}
+\newcommand{\insertTitle}{
+    \textbf{$title.type$}\linebreak
+    \textbf{$title.name$} \linebreak
+    $title.subject$
+}
+\newcommand{\insertAuthor}{$author.name$}
+\newcommand{\insertAuthorPosition}{$author.position$}
+\newcommand{\insertVerifier}{$verifier.name$}
+\newcommand{\insertVerifierPosition}{$verifier.position$}
+
+\newcommand{\sectionbreak}{\clearpage}
+
+\sloppy
+
+\input{./common.tex}
+
+\begin{document}
+
+\input{./title.tex}
+
+\newpage
+\pagenumbering{arabic}
+\setcounter{page}{2}
+
+\tableofcontents
+
+$body$
+
+\end{document}
